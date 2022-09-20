@@ -1,0 +1,96 @@
+/* TODA LA PANTALLA */
+* {
+    padding: 0;
+    margin: 0;
+    font-family:'figtree', sans-serif;
+    text-decoration: none;
+}
+.fondo-img-i{
+    background-image: url(./assets/fondoindex.jpg);
+}
+
+/* UNICAMENTE EL BODY */
+body {
+    background-color: $negro;
+}
+
+main {
+    margin-right: 300px;   
+     
+ }
+ 
+ aside {
+     width: 600px;
+     display: grid;
+     grid-template-columns: repeat(5 20%);
+     grid-template-rows:repeat(5 20%);
+     align-content: end;
+     justify-items:left;
+     transition: transform 5s;
+      
+    &:hover {
+    transform: scalex(1.1) scaley(1.1);
+    margin-right: 100px;
+}       
+ }
+
+/* footer */
+footer {
+    position: relative;
+    background-color:$negro ;
+    color:$blanco ;    
+}
+
+/* ubicacion */
+.body-img iframe {
+    display: grid;
+    grid-column-start: 4;
+    
+& iframe {
+    transform: scalex(1) scaleY(1);
+}
+}
+
+/* Contenedor del iniciar sesion */
+.user-container {
+    border: 8px double $verde-main;
+    position: relative;
+    height: 100px;
+    width: 250px;
+    margin-top: 10px;
+    background-color:darkgray;
+    margin-bottom: 100px;
+    /* Titulo del iniciar sesion*/
+&__h3 {
+    background-color: $verde-oscuro;
+    display: inline-block;
+    padding: 10px;
+    height: 22px;
+    width: 230px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+}
+
+/* contenedor de la imagen y la ubicacion*/
+.body-img {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    transform: translate(10px);
+    &:hover {
+        transform: scalex(1.3) scaleY(1.3) translate(50px);
+        margin-left: 100px;
+        
+    }
+    
+}
+/* ubicacion */
+.body-img iframe {
+    display: grid;
+    grid-column-start: 4;
+    & iframe:hover {
+        transform: scalex(1) scaleY(1);
+    } 
+}
+
+

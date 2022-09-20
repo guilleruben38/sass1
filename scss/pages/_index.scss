@@ -1,0 +1,231 @@
+
+.contenedor-main-aside {
+    display:flex;
+    justify-content:space-between;
+    margin-top: 50px;
+    margin-bottom: 50px;   
+}
+
+/* Contenedor del aside del index */
+.aside-container {
+    bottom: 250px;
+    right: 30px;
+    background-color: $verde-oscuro;
+    border: solid 1px #2E2E2E;
+    border-radius: 15px; 
+    /* Titulo del aside del index */
+&__h2 {
+    display: grid;
+    align-items: center;
+    margin-right:40px;
+    padding: 20px;
+    font-size: 40px;
+    background-color: $colornavaside;
+    border-radius: 15px;
+    border-left: 5px solid  $verde-main ;
+    border-bottom: 5px solid $verde-main ;
+    text-align: center;
+    font-family:'rubik dirt',cursive;
+}
+
+/* Parrafo del aside del index */
+&__parrafo {
+    font-size: 27px;
+    font-family: 'merriweather', serif;
+    border-bottom: 8px solid $verde-main ;
+    border-radius: 5px;  
+    display: grid;    
+}   
+}
+
+
+/* contenedor de los incriptos a torneos del index */
+.inscriptos-container {
+    position: relative;
+    margin-bottom: 100px;  
+    /* titulo de los inscriptos al torneo del index */
+&__title {
+    color: wheat;
+    display: inline;
+    font-size: 25px;
+    border-top: 7px solid $verde-main ;
+    border-left: 7px solid $verde-main ;
+    /* Tabla de los inscriptos al torneo del index */
+}
+&__table {
+    width: 500px;
+    height: 200px;
+    border-color: $verde-oscuro;
+    background-color: $verde-oscuro;
+    color:#E8E8E8  ;
+    margin-top: 10px;
+    font-size:x-large;
+}    
+} 
+
+/* pantalla con una resolucion de 550px */
+@media (max-width: 550px) {
+    /* menu de navegacion  */
+    .nav-container{
+        flex-direction: row;
+        &__ul {
+            display: none;
+        }
+        & span{
+            background-color:$verde-main ;
+            display: inline;
+        }
+         /* menu de navegacion  */
+         &-t{
+        flex-direction: row;
+        }
+        
+         &__ul {
+        display: none;
+        }
+        &-t span{
+            background-color:$verde-main;
+            display: inline;
+        }
+    }
+}
+
+    @media (max-width: 550px) {
+    /* Titulo */
+    .header-h1{
+    font-size: 40px;
+    }
+    /*contenedor del iniciar sesion */
+        .user-container {
+            width: 320px;
+            height: 150px;
+            font-size: 15px;
+            /* inputos del iniciar sesion */
+         & input {
+            font-size: 18px;
+  
+       }
+         /* titulo del iniciar sesion */
+         &__h3 {
+            background-color: $verde-oscuro;
+            width: 300px;
+            height: 50px;
+            font-size: 25px;
+       }
+      } 
+    }
+    
+
+    
+
+/* pantalla con una resolucion de 1035px */
+@media (max-width:1035px) {
+    .contenedor-main-aside {
+        display: grid;
+        grid-template-columns: repeat(5 20%);
+        grid-template-rows:repeat(5 20%);
+}
+}
+   
+/* Contenedor del aside y del main*/
+@media (max-width:600px) {
+    .contenedor-main-aside {
+        display: grid;
+        grid-template-columns: repeat(5 20%);
+        grid-template-rows:repeat(5 20%);  
+    }
+    main {
+        display: grid;
+        align-content: flex-start;    
+    }
+    aside {
+        width: 250px;
+        margin: 0;
+        display: grid;
+        align-content:end;
+        justify-items:left;
+    }
+    .aside-container__h2{
+        text-align: center;
+        width: 230px;
+    }
+    .aside-container__parrafo {
+            width: 250px;
+            text-align: center;
+            justify-items: center;
+            align-content:flex-end;  
+        }  
+    }    
+
+
+
+@media (max-width:750px) {
+       .body-img iframe{
+        width: 270px;
+       }
+}
+
+@media (max-width:510px) {
+       /* tabla del index*/
+       .inscriptos-container__table {
+        width: 200px;
+       }
+}
+
+@media (max-width:371px){
+       .header-h1 {
+        font-size:20px;
+       }
+}
+/* pantalla con una resolucion de 627px */
+/* grid aplicado en imagen y ubicacion */
+@media (max-width:627px) {
+    .body-img {
+        display: grid;
+        grid-template-columns:20% 20% 20% 20% 20%;
+        grid-template-rows: 20% 20% 20% 20% 20%;
+        & iframe {
+            position:relative;
+            grid-column-start: 1;
+            grid-row-start: 3;
+            width:270px;
+            height: 100px;
+          }     
+          & img {
+            position: relative;
+            grid-column-start:1 ;
+            grid-row-start: 1;
+            width: 270px;
+            height: 100px;
+        } 
+    }
+    }
+
+
+@media (max-width:325px) {
+    /* tabla del index*/
+    .inscriptos-container__table {
+        width: 150px;
+        font-size: 20px;
+       }
+}
+
+@media (max-width:335px) {
+    /*contenedor del iniciar sesion */
+    .user-container {
+        width: 220px;
+        height: 100px;
+        font-size: 10px;
+           /* titulo del iniciar sesion */
+    &__h3 {
+        background-color: $verde-oscuro;
+        width: 200px;
+        height: 20px;
+        font-size: 15px;
+   }
+    }
+/* inputos del iniciar sesion */
+     .user-container input {
+        font-size: 10px;
+   }    
+}
