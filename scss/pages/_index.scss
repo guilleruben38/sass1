@@ -1,9 +1,6 @@
 
 .contenedor-main-aside {
-    display:flex;
-    justify-content:space-between;
-    margin-top: 50px;
-    margin-bottom: 50px;   
+   @include templateflex (space-between)  
 }
 
 /* Contenedor del aside del index */
@@ -22,8 +19,7 @@
     font-size: 40px;
     background-color: $colornavaside;
     border-radius: 15px;
-    border-left: 5px solid  $verde-main ;
-    border-bottom: 5px solid $verde-main ;
+    @extend .borders;
     text-align: center;
     font-family:'rubik dirt',cursive;
 }
@@ -48,10 +44,9 @@
     color: wheat;
     display: inline;
     font-size: 25px;
-    border-top: 7px solid $verde-main ;
-    border-left: 7px solid $verde-main ;
-    /* Tabla de los inscriptos al torneo del index */
+    @extend .borders;
 }
+/* Tabla de los inscriptos al torneo del index */
 &__table {
     width: 500px;
     height: 200px;
@@ -60,7 +55,7 @@
     color:#E8E8E8  ;
     margin-top: 10px;
     font-size:x-large;
-}    
+}  
 } 
 
 /* pantalla con una resolucion de 550px */
@@ -119,21 +114,17 @@
     
 
 /* pantalla con una resolucion de 1035px */
-@media (max-width:1035px) {
+ @media (max-width:1035px) {
     .contenedor-main-aside {
-        display: grid;
-        grid-template-columns: repeat(5 20%);
-        grid-template-rows:repeat(5 20%);
+         @include templategrid (5);
 }
 }
    
 /* Contenedor del aside y del main*/
 @media (max-width:600px) {
-    .contenedor-main-aside {
-        display: grid;
-        grid-template-columns: repeat(5 20%);
-        grid-template-rows:repeat(5 20%);  
-    }
+     .contenedor-main-aside {
+        @include templategrid (5);
+     }
     main {
         display: grid;
         align-content: flex-start;    
@@ -141,9 +132,10 @@
     aside {
         width: 250px;
         margin: 0;
-        display: grid;
-        align-content:end;
-        justify-items:left;
+@include gridtemplate (end,true)
+        // display: grid;
+        // align-content:end;
+        // justify-items:left;
     }
     .aside-container__h2{
         text-align: center;
@@ -180,26 +172,24 @@
 /* pantalla con una resolucion de 627px */
 /* grid aplicado en imagen y ubicacion */
 @media (max-width:627px) {
-    .body-img {
-        display: grid;
-        grid-template-columns:20% 20% 20% 20% 20%;
-        grid-template-rows: 20% 20% 20% 20% 20%;
+        .body-img {
+        @include templategrid (5);
         & iframe {
-            position:relative;
             grid-column-start: 1;
             grid-row-start: 3;
             width:270px;
             height: 100px;
           }     
           & img {
-            position: relative;
+            position:relative;
             grid-column-start:1 ;
             grid-row-start: 1;
-            width: 270px;
-            height: 100px;
+            width:270px;
+            height: 100px;               
         } 
     }
-    }
+}
+    
 
 
 @media (max-width:325px) {

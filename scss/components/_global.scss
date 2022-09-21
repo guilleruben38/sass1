@@ -29,8 +29,8 @@ main {
      transition: transform 5s;
       
     &:hover {
-    transform: scalex(1.1) scaley(1.1);
-    margin-right: 100px;
+        @extend .hovers;
+  
 }       
  }
 
@@ -47,7 +47,7 @@ footer {
     grid-column-start: 4;
     
 & iframe {
-    transform: scalex(1) scaleY(1);
+    @extend .hovers;
 }
 }
 
@@ -78,19 +78,59 @@ footer {
     grid-template-columns: repeat(4, 1fr);
     transform: translate(10px);
     &:hover {
-        transform: scalex(1.3) scaleY(1.3) translate(50px);
-        margin-left: 100px;
-        
-    }
-    
+        @extend .hovers     
+    }  
 }
 /* ubicacion */
 .body-img iframe {
     display: grid;
     grid-column-start: 4;
     & iframe:hover {
-        transform: scalex(1) scaleY(1);
+        @extend .hovers;
     } 
 }
 
 
+
+
+
+
+
+// extends
+.hovers {
+    transform: scalex(1.1) scaley(1.1);
+    margin-right: 100px;
+}
+
+.borders {
+    border-left: 8px solid  $verde-main;
+    border-bottom: 8px solid $verde-main;
+    
+}
+
+
+
+// mixins
+@mixin templategrid($grids) {
+    display: grid;
+    grid-template-columns: repeat($grids 20%);
+    grid-template-rows:repeat( 20%);
+}
+
+@mixin templateflex ($valuejustify)  {
+    display:flex;
+    justify-content:$valuejustify;
+    margin-top: 50px;
+    margin-bottom: 50px; 
+}
+
+
+@mixin gridtemplate ($valuealign,$justifyitems) {
+     display: grid;
+     align-content:$valuealign;
+     
+
+     @if ($justifyitems == true) {
+        justify-items:left;
+     }
+}
